@@ -1,0 +1,421 @@
+/* Umum */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffc0cb, #ff9eb5, #ffb6c1);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Container Login */
+.login-container {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 25px rgba(255, 105, 180, 0.3);
+    width: 350px;
+    text-align: center;
+    animation: popIn 0.8s ease-in-out;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    color: #ff4f8b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #ff69b4;
+    font-weight: 500;
+}
+
+/* Wrapper input dengan ikon */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 12px;
+    color: #ff85b7;
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    margin-top: 5px;
+    border: 1px solid #f7b2c0;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.input-wrapper input:focus {
+    border-color: #ff4f8b;
+    box-shadow: 0 0 6px rgba(255, 105, 180, 0.4);
+}
+
+/* Tombol */
+button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #ff4f8b, #ff6fa1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff70a6, #ff4081);
+}
+
+/* Halaman Home */
+.home-container {
+    background-color: #fff;
+    padding: 50px 60px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 8px 25px rgba(255, 105, 180, 0.3);
+    animation: popIn 1s ease-in-out;
+}
+
+.home-container h1 {
+    color: #ff4f8b;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.home-container span {
+    color: #d63384;
+    font-weight: bold;
+}
+
+.logout-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff4f8b;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.logout-btn i {
+    margin-right: 6px;
+}
+
+.logout-btn:hover {
+    background-color: #ff77a9;
+    transform: scale(1.05);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container, .home-container {
+        width: 80%;
+        padding: 30px 25px;
+    }
+
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    button, .logout-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .input-wrapper input {
+        padding: 8px 8px 8px 30px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container, .home-container {
+        width: 90%;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    button, .logout-btn {
+        font-size: 13px;
+    }
+}
+/* ==== DATA SISWA TABLE ==== */
+.data-container {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.data-container h2 {
+    color: #ff4f8b;
+    font-size: 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Tombol Tambah */
+.add-btn {
+    background: linear-gradient(135deg, #ff6fa1, #ff4081);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 15px;
+}
+
+.add-btn i {
+    margin-right: 6px;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff85b7, #ff4f8b);
+}
+
+/* Table Styling */
+.table-siswa {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-siswa th {
+    background-color: #ff9eb5;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.table-siswa td {
+    padding: 10px;
+    border-bottom: 1px solid #ffd6e1;
+    color: #444;
+    font-size: 14px;
+}
+
+.table-siswa tr:nth-child(even) {
+    background-color: #fff5f8;
+}
+
+.table-siswa tr:hover {
+    background-color: #ffe6f0;
+}
+
+/* Tombol Aksi */
+.edit-btn, .delete-btn {
+    border: none;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background-color: #ff85b7;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #ff5f97;
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    background-color: #ff4f8b;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a6b;
+    transform: scale(1.05);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .table-siswa th, .table-siswa td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .add-btn, .edit-btn, .delete-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+/* ==== LOGOUT BUTTON DI BAWAH ==== */
+.logout-section {
+    text-align: right;
+    margin-top: 25px;
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #ff6fa1, #ff4081);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #ff8cb8, #ff4f8b);
+    transform: scale(1.05);
+}
+/* ==== FORM TAMBAH SISWA ==== */
+.form-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.6s ease-in-out;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    color: #ff4f8b;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-container .input-group {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    font-weight: 500;
+    color: #555;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #ff6fa1;
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.4);
+}
+
+.save-btn,
+.cancel-btn {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.save-btn {
+    background-color: #ff4f8b;
+}
+
+.cancel-btn {
+    background-color: #999;
+}
+
+.save-btn:hover {
+    background-color: #ff6fa1;
+    transform: scale(1.05);
+}
+
+.cancel-btn:hover {
+    background-color: #bbb;
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/* Tombol sejajar di form tambah siswa */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Warna input agar lembut */
+.form-container input,
+.form-container select {
+    background-color: #fff5f8;
+    border: 1px solid #ffb6c1;
+}
+
+/* Animasi form */
+.form-container {
+    animation: slideUp 0.6s ease-in-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
